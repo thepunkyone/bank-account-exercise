@@ -1,7 +1,7 @@
-const bankAccount = {};
+function BankAccount() {
 
-
+};
 
 module.exports = {
-  bankAccount,
+  BankAccount,
 };
