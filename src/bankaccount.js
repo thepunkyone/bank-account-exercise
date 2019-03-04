@@ -20,6 +20,10 @@ BankAccount.prototype.withdraw = function (amount) {
     this.balance -= amount;
 };
 
+BankAccount.prototype.checkBalance = function () {
+    return this.balance;
+};
+
 
 
 module.exports = BankAccount;
