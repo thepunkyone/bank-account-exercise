@@ -50,5 +50,8 @@ describe('currentAccount', () => {
         currentAccount.balance = 200;
         currentAccount.withdraw(100);
         expect(currentAccount.balance).toBe(100);
+    });
+    it('error if withdrawing an amount that exceeds the account balance', () => {
+        expect(() => currentAccount.withdraw(100)).toThrowError('You don\'t have enough funds to withdraw 100.');
     }); 
 });

@@ -10,16 +10,13 @@ function BankAccount(name) {
 };
 
 BankAccount.prototype.deposit = function (amount) {
-    if (typeof amount !== 'number' || amount < 0) {
-        throw new Error('Please enter a valid number.');
-    }
+    if (typeof amount !== 'number' || amount < 0) {throw new Error('Please enter a valid number.');}
     this.balance += amount;
 };
 
 BankAccount.prototype.withdraw = function (amount) {
-    if (typeof amount !== 'number' || amount < 0) {
-        throw new Error('Please enter a valid number.');
-    }
+    if (typeof amount !== 'number' || amount < 0) {throw new Error('Please enter a valid number.');}
+    if (amount > this.balance) {throw new Error(`You don't have enough funds to withdraw ${amount}.`);}
     this.balance -= amount;
 };
 
