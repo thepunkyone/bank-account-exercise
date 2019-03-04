@@ -66,5 +66,9 @@ describe('currentAccount', () => {
     //viewStatement method
     it('viewStatement method returns an array of transactions', () => {
         expect(currentAccount.viewStatement()).toEqual([]);
+        currentAccount.deposit(50);
+        expect(currentAccount.viewStatement()).toEqual([{'deposited': 50}]);
+        currentAccount.withdraw(10);
+        expect(currentAccount.viewStatement()).toEqual([{'deposited': 50}, {'withdrawn': 10}]);
     });
 });
