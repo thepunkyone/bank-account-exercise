@@ -24,6 +24,10 @@ BankAccount.prototype.checkBalance = function () {
     return this.balance;
 };
 
+BankAccount.prototype.viewStatement = function () {
+    return this.statements;
+};
+
 
 
 module.exports = BankAccount;

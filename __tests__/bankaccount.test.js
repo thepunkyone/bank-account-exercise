@@ -62,4 +62,9 @@ describe('currentAccount', () => {
         expect(currentAccount.checkBalance()).toBe(50);
         expect(typeof currentAccount.checkBalance()).toBe('number');
     });
+
+    //viewStatement method
+    it('viewStatement method returns an array of transactions', () => {
+        expect(currentAccount.viewStatement()).toEqual([]);
+    });
 });
