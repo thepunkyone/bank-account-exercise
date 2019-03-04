@@ -24,4 +24,19 @@ describe('currentAccount', () => {
     it('currentAccount has a statements property with the starting value of empty array', () => {
         expect(currentAccount.statements).toEqual([]);
     });
+
+    it('deposit method is a function', () => {
+        expect(typeof currentAccount.deposit).toBe('function');
+    });
+    //How to test separate arguments - mock functions?
+    it('deposit method\'s property can only be a number', () => {
+        expect(() => currentAccount.deposit('100')).toThrowError('Please enter a valid number');
+    });
+    it('deposit method\'s property cannot be a negative number', () => {
+        expect(() => currentAccount.deposit(-100)).toThrowError('Please enter a valid number');
+    });
+    it('deposit method increases account balance by the defined amount', () => {
+        currentAccount.deposit(100);
+        expect(currentAccount.balance).toBe(100);
+    }); 
 });
