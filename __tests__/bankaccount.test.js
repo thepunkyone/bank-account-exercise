@@ -7,7 +7,14 @@ describe('currentAccount', () => {
     });
 
     it('currentAccount type is object', () => {
-        console.log(currentAccount);
         expect(currentAccount).toBeInstanceOf(Object);
+    });
+
+    it('Name property value is a string', () => {
+        expect(typeof currentAccount.name).toBe('string');
+        currentAccount = new BankAccount(10);
+        expect(() => currentAccount.errorWarning()).toThrowError('Please enter a valid name.'); 
+        currentAccount = new BankAccount(true);
+        expect(() => currentAccount.errorWarning()).toThrowError('Please enter a valid name.'); 
     });
 });
