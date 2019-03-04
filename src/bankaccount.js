@@ -30,6 +30,9 @@ BankAccount.prototype.checkBalance = function () {
 };
 
 BankAccount.prototype.viewStatement = function () {
+    // const sortByMostRecent = this.statements.sort(function (a, b) {return b - a});
+    // console.log(sortByMostRecent);
+    // return sortByMostRecent;
     return this.statements;
 };
 

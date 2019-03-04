@@ -68,9 +68,11 @@ describe('currentAccount', () => {
     //viewStatement method
     it('viewStatement method returns an array of transactions', () => {
         expect(currentAccount.viewStatement()).toEqual([]);
+        const dateNow = new Date().toString();
         currentAccount.deposit(50);
-        expect(currentAccount.viewStatement()).toEqual([{'deposited': 50}]);
+        expect(currentAccount.viewStatement()).toEqual([{'date': dateNow,'deposited': 50}]);
+        const dateNowAgain = new Date().toString();
         currentAccount.withdraw(10);
-        expect(currentAccount.viewStatement()).toEqual([{'deposited': 50}, {'withdrawn': 10}]);
+        expect(currentAccount.viewStatement()).toEqual([{'date': dateNow, 'deposited': 50}, {'date': dateNowAgain, 'withdrawn': 10}]);
     });
 });
