@@ -17,4 +17,11 @@ describe('currentAccount', () => {
         currentAccount = new BankAccount(true);
         expect(() => currentAccount.errorWarning()).toThrowError('Please enter a valid name.'); 
     });
+
+    it('currentAccount has a balance property with the starting value of 0', () => {
+        expect(currentAccount.balance).toBe(0);
+    });
+    it('currentAccount has a statements property with the starting value of empty array', () => {
+        expect(currentAccount.statements).toEqual([]);
+    });
 });
