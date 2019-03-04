@@ -16,6 +16,13 @@ BankAccount.prototype.deposit = function (amount) {
     this.balance += amount;
 };
 
+BankAccount.prototype.withdraw = function (amount) {
+    if (typeof amount !== 'number' || amount < 0) {
+        throw new Error('Please enter a valid number.');
+    }
+    this.balance -= amount;
+};
+
 
 
 module.exports = BankAccount;
