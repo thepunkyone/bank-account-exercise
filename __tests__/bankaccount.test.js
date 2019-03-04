@@ -38,6 +38,7 @@ describe('currentAccount', () => {
     it('deposit method increases account balance by the defined amount', () => {
         currentAccount.deposit(100);
         expect(currentAccount.balance).toBe(100);
+        expect(typeof currentAccount.balance).toBe('number');
     }); 
 
     //withdraw method
@@ -51,6 +52,7 @@ describe('currentAccount', () => {
         currentAccount.balance = 200;
         currentAccount.withdraw(100);
         expect(currentAccount.balance).toBe(100);
+        expect(typeof currentAccount.balance).toBe('number');
     });
     it('error if withdrawing an amount that exceeds the account balance', () => {
         expect(() => currentAccount.withdraw(100)).toThrowError('You don\'t have enough funds to withdraw 100.');
@@ -58,9 +60,9 @@ describe('currentAccount', () => {
 
     //checkBalance method
     it('checkBalance method returns the account balance', () => {
+        let dateNow = new Date().toString();
         currentAccount.deposit(50);
-        expect(currentAccount.checkBalance()).toBe(50);
-        expect(typeof currentAccount.checkBalance()).toBe('number');
+        expect(currentAccount.checkBalance()).toBe('Balance at' + dateNow +': ' + 50);
     });
 
     //viewStatement method
