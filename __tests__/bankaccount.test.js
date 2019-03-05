@@ -1,4 +1,5 @@
 const BankAccount = require('../src/bankaccount');
+const sortByMostRecent = require('../src/bankaccount');
 
 describe('currentAccount', () => {
     let currentAccount;
@@ -68,11 +69,11 @@ describe('currentAccount', () => {
     //viewStatement method
     it('viewStatement method returns an array of transactions', () => {
         expect(currentAccount.viewStatement()).toEqual([]);
-        const dateNow = new Date().toString();
-        currentAccount.deposit(50);
-        expect(currentAccount.viewStatement()).toEqual([{'date': dateNow,'deposited': 50}]);
-        const dateNowAgain = new Date().toString();
-        currentAccount.withdraw(10);
-        expect(currentAccount.viewStatement()).toEqual([{'date': dateNow, 'deposited': 50}, {'date': dateNowAgain, 'withdrawn': 10}]);
+
+        const date = 'Tue Mar 05 2019 00:41:00 GMT+0000 (GMT)';
+        const date2 = 'Tue Mar 05 2019 00:51:00 GMT+0000 (GMT)';
+
+        currentAccount.statements = [{'date': date, 'deposited': 50}, {'date': date2, 'withdrawn': 10}];
+        expect(currentAccount.viewStatement()).toEqual([{'date': date2, 'withdrawn': 10}, {'date': date, 'deposited': 50}]);
     });
 });

@@ -29,13 +29,21 @@ BankAccount.prototype.checkBalance = function () {
     return 'Balance at' + dateNow + ': ' + this.balance;
 };
 
-BankAccount.prototype.viewStatement = function () {
-    // const sortByMostRecent = this.statements.sort(function (a, b) {return b - a});
-    // console.log(sortByMostRecent);
-    // return sortByMostRecent;
-    return this.statements;
+function sortByMostRecent(a, b) {
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+    return dateB - dateA;
 };
 
+BankAccount.prototype.viewStatement = function () {
+    const sortedByRecentDate = this.statements.sort(sortByMostRecent);
+    return sortedByRecentDate;
+};
+
+BankAccount.prototype.filterDeposits = function () {
+
+}
 
 
-module.exports = BankAccount;
+
+module.exports = BankAccount, sortByMostRecent;
