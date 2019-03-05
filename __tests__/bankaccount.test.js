@@ -11,11 +11,9 @@ describe('currentAccount', () => {
         expect(currentAccount).toBeInstanceOf(Object);
     });
     it('Name property value is a string', () => {
-        expect(typeof currentAccount.name).toBe('string');
-        currentAccount = new BankAccount(10);
-        expect(() => currentAccount.errorWarning()).toThrowError('Please enter a valid name.'); 
-        currentAccount = new BankAccount(true);
-        expect(() => currentAccount.errorWarning()).toThrowError('Please enter a valid name.');
+        expect(typeof currentAccount.name('Vitnija Bluzma')).toBe('string');
+        expect(() => currentAccount.name(10)).toThrowError('Please enter a valid name.'); 
+        expect(() => currentAccount.name(true)).toThrowError('Please enter a valid name.');
     });
     it('currentAccount has a balance property with the starting value of 0', () => {
         expect(currentAccount.balance).toBe(0);

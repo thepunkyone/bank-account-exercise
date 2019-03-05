@@ -1,8 +1,9 @@
 function BankAccount(name) {
-    this.name = name;
-    this.errorWarning = function () {
+    this.name = function (name) {
         if (typeof name !== 'string') {
             throw new Error('Please enter a valid name.');
+        } else {
+            return name;
         }
     };
     this.balance = 0;
