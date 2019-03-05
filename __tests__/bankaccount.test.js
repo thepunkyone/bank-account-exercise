@@ -19,7 +19,14 @@ describe('currentAccount', () => {
         expect(currentAccount.balance).toBe(0);
     });
     it('currentAccount has a statements property with the starting value of empty array', () => {
+        expect(currentAccount.statements).toBeInstanceOf(Array);
         expect(currentAccount.statements).toEqual([]);
+
+        let dateNow = new Date().toString();
+        currentAccount.deposit(100);
+        expect(currentAccount.statements).toEqual([{'date': dateNow, 'deposited': 100}]);
+        currentAccount.withdraw(50);
+        currentAccount.statements = [{'date': dateNow, 'deposited': 100}, {'date': dateNow, 'withdrawn': 50}];
     });
 
     //deposit method

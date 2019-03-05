@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1551794962238" clover="3.2.0">
-  <project timestamp="1551794962238" name="All files">
+<coverage generated="1551796359558" clover="3.2.0">
+  <project timestamp="1551796359558" name="All files">
     <metrics statements="31" coveredstatements="31" conditionals="12" coveredconditionals="11" methods="11" coveredmethods="11" elements="54" coveredelements="53" complexity="0" loc="31" ncloc="31" packages="1" files="1" classes="1"/>
     <file name="bankaccount.js" path="/home/vitnija/Projects/bank-account-exercise/src/bankaccount.js">
       <metrics statements="31" coveredstatements="31" conditionals="12" coveredconditionals="11" methods="11" coveredmethods="11"/>
@@ -11,16 +11,16 @@
       <line num="9" count="15" type="stmt"/>
       <line num="10" count="15" type="stmt"/>
       <line num="13" count="1" type="stmt"/>
-      <line num="14" count="6" type="cond" truecount="4" falsecount="0"/>
-      <line num="15" count="2" type="stmt"/>
-      <line num="16" count="2" type="stmt"/>
-      <line num="17" count="2" type="stmt"/>
+      <line num="14" count="7" type="cond" truecount="4" falsecount="0"/>
+      <line num="15" count="3" type="stmt"/>
+      <line num="16" count="3" type="stmt"/>
+      <line num="17" count="3" type="stmt"/>
       <line num="20" count="1" type="stmt"/>
-      <line num="21" count="2" type="cond" truecount="3" falsecount="1"/>
-      <line num="22" count="2" type="cond" truecount="2" falsecount="0"/>
-      <line num="23" count="1" type="stmt"/>
-      <line num="24" count="1" type="stmt"/>
-      <line num="25" count="1" type="stmt"/>
+      <line num="21" count="3" type="cond" truecount="3" falsecount="1"/>
+      <line num="22" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="23" count="2" type="stmt"/>
+      <line num="24" count="2" type="stmt"/>
+      <line num="25" count="2" type="stmt"/>
       <line num="28" count="1" type="stmt"/>
       <line num="29" count="1" type="stmt"/>
       <line num="30" count="1" type="stmt"/>
