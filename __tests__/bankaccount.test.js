@@ -1,5 +1,4 @@
 const BankAccount = require('../src/bankaccount');
-const sortByMostRecent = require('../src/bankaccount');
 
 describe('currentAccount', () => {
     let currentAccount;

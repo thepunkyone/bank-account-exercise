@@ -29,13 +29,13 @@ BankAccount.prototype.checkBalance = function () {
     return 'Balance at' + dateNow + ': ' + this.balance;
 };
 
-function sortByMostRecent(a, b) {
-    const dateA = new Date(a.date);
-    const dateB = new Date(b.date);
-    return dateB - dateA;
-};
-
 BankAccount.prototype.viewStatement = function () {
+    function sortByMostRecent(a, b) {
+        const dateA = new Date(a.date);
+        const dateB = new Date(b.date);
+        return dateB - dateA;
+    };
+
     const sortedByRecentDate = this.statements.sort(sortByMostRecent);
     return sortedByRecentDate;
 };
@@ -46,4 +46,4 @@ BankAccount.prototype.filterDeposits = function () {
 
 
 
-module.exports = BankAccount, sortByMostRecent;
+module.exports = BankAccount;
