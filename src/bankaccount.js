@@ -44,6 +44,8 @@ BankAccount.prototype.filterDeposits = function () {
     return this.viewStatement().filter(transaction => transaction.hasOwnProperty('deposited'));
 }
 
-
+BankAccount.prototype.filterWithdrawals = function () {
+    return this.viewStatement().filter(transaction => transaction.hasOwnProperty('withdrawn'));
+}
 
 module.exports = BankAccount;

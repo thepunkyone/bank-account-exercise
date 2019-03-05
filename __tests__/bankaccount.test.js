@@ -76,11 +76,12 @@ describe('currentAccount', () => {
         expect(currentAccount.viewStatement()).toEqual([{'date': date2, 'withdrawn': 10}, {'date': date, 'deposited': 50}]);
     });
 
-    it('filterDeposits methods returns an array of deposits', () => {
+    it('filter methods return only deposits or only withdrawals', () => {
         const date = 'Tue Mar 05 2019 00:41:00 GMT+0000 (GMT)';
         const date2 = 'Tue Mar 05 2019 00:51:00 GMT+0000 (GMT)';
 
         currentAccount.statements = [{'date': date, 'deposited': 50}, {'date': date2, 'withdrawn': 10}];
         expect(currentAccount.filterDeposits()).toEqual([{'date': date, 'deposited': 50}]);
+        expect(currentAccount.filterWithdrawals()).toEqual([{'date': date2, 'withdrawn': 10}]);
     });    
 });
