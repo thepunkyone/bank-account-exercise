@@ -4,7 +4,7 @@
   "description": "Bank Account Exercise by Vitnija Bluzma https://github.com/thepunkyone",
   "main": "/src/index.js",
   "scripts": {
-    "test": "jest --verbose"
+    "test": "jest --verbose --coverage"
   },
   "repository": {
     "type": "git",

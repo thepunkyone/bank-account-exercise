@@ -15,7 +15,7 @@ describe('currentAccount', () => {
         currentAccount = new BankAccount(10);
         expect(() => currentAccount.errorWarning()).toThrowError('Please enter a valid name.'); 
         currentAccount = new BankAccount(true);
-        expect(() => currentAccount.errorWarning()).toThrowError('Please enter a valid name.'); 
+        expect(() => currentAccount.errorWarning()).toThrowError('Please enter a valid name.');
     });
     it('currentAccount has a balance property with the starting value of 0', () => {
         expect(currentAccount.balance).toBe(0);
