@@ -41,7 +41,7 @@ BankAccount.prototype.viewStatement = function () {
 };
 
 BankAccount.prototype.filterDeposits = function () {
-
+    return this.viewStatement().filter(transaction => transaction.hasOwnProperty('deposited'));
 }
 
 
