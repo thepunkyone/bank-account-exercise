@@ -48,10 +48,10 @@ describe('currentAccount', () => {
 
     //withdraw method
     it('withdraw method\'s property can only be a number', () => {
-        expect(() => currentAccount.deposit('100')).toThrowError('Please enter a valid number');
+        expect(() => currentAccount.withdraw('100')).toThrowError('Please enter a valid number');
     });
     it('withdraw method\'s property cannot be a negative number', () => {
-        expect(() => currentAccount.deposit(-100)).toThrowError('Please enter a valid number');
+        expect(() => currentAccount.withdraw(-100)).toThrowError('Please enter a valid number');
     });
     it('withdraw method decreases account balance by the defined amount', () => {
         currentAccount.balance = 200;
