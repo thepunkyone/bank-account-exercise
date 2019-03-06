@@ -2,7 +2,7 @@
   "name": "bank-account-exercise",
   "version": "1.0.0",
   "description": "Bank Account Exercise by Vitnija Bluzma https://github.com/thepunkyone",
-  "main": "/src/index.js",
+  "main": "/src/bankaccount.js",
   "scripts": {
     "test": "jest --verbose --coverage"
   },
