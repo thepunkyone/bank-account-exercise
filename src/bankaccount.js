@@ -1,11 +1,8 @@
 function BankAccount(name) {
-    this.name = function (name) {
-        if (typeof name !== 'string') {
-            throw new Error('Please enter a valid name.');
-        } else {
-            return name;
-        }
-    };
+    if (typeof name !== 'string') {
+        throw new Error('Please enter a valid name.');
+    } 
+    this.name = name;
     this.balance = 0;
     this.statements = [];
 };
@@ -29,6 +26,7 @@ BankAccount.prototype.checkBalance = function () {
     let dateNow = new Date().toString();
     return 'Balance at' + dateNow + ': ' + this.balance;
 };
+
 
 BankAccount.prototype.viewStatement = function () {
     function sortByMostRecent(a, b) {
